@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using PiresVendas.Repositories.Implementations;
+using PiresVendas.Repositories.Interfaces;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,9 +30,11 @@ builder.Services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
 
 // Database
 var connectionString = builder.Configuration.GetConnectionString("PiresVendas");
-builder.Services.AddDbContext<DatabaseContext>(options =>
+builder.Services.AddDbContext<MyDbContext>(options =>
     options.UseNpgsql(connectionString));
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
+builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
 
 var app = builder.Build();
 

@@ -11,7 +11,7 @@ using connect_dentes_API;
 
 namespace PiresVendas.Migrations
 {
-    [DbContext(typeof(DatabaseContext))]
+    [DbContext(typeof(MyDbContext))]
     [Migration("20240120001052_Inicial")]
     partial class Inicial
     {

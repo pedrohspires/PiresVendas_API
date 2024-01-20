@@ -10,7 +10,7 @@ using connect_dentes_API;
 
 namespace PiresVendas.Migrations
 {
-    [DbContext(typeof(DatabaseContext))]
+    [DbContext(typeof(MyDbContext))]
     partial class DatabaseContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
