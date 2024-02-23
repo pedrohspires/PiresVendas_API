@@ -1,8 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using PiresVendas.Utils;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PiresVendas.Entities
 {
-    public class Venda : BaseEntity
+    [Table("movimentacao")]
+    public class Movimentacao : BaseEntity
     {
         [Column("id_produto")]
         public int ProdutoId { get; set; }
@@ -16,5 +18,8 @@ namespace PiresVendas.Entities
 
         [Column("desconto")]
         public decimal Desconto { get; set; }
+
+        [Column("tipo")]
+        public Tipos Tipo { get; set; }
     }
 }

@@ -10,6 +10,6 @@ namespace connect_dentes_API
         }
 
         public DbSet<Produto> Produtos { get; set; }
-        public DbSet<Venda> Vendas { get; set; }
+        public DbSet<Movimentacao> Movimentacoes { get; set; }
     }
 }
