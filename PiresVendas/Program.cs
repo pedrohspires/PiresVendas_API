@@ -46,7 +46,6 @@ if (app.Environment.IsDevelopment())
     app.UseCors("MyPolicy");
 }
 
-
 app.UseHttpsRedirection();
 
 app.UseRouting();

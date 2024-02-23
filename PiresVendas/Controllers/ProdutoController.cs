@@ -58,7 +58,7 @@ namespace PiresVendas.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpPost("Listagem")]
         public async Task<ActionResult<ProdutoDTO>> GetList([FromBody] PesquisaDto pesquisa)
         {
             try
@@ -86,7 +86,7 @@ namespace PiresVendas.Controllers
             }
         }
 
-        [HttpGet("select")]
+        [HttpPost("select")]
         public async Task<ActionResult<ProdutoDTO>> GetSelect([FromBody] PesquisaDto pesquisa)
         {
             try
