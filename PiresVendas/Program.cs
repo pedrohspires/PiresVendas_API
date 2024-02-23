@@ -35,6 +35,7 @@ builder.Services.AddDbContext<MyDbContext>(options =>
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
+builder.Services.AddScoped<IMovimentacaoRepository, MovimentacaoRepository>();
 
 var app = builder.Build();
 
